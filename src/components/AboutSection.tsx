@@ -25,29 +25,45 @@ const AboutSection = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div className="neo-blur p-6 rounded-lg flex flex-col items-center text-center transform transition-transform duration-300 hover:scale-105">
-              <Server className="w-12 h-12 text-accent1 mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Infrastructure</h3>
-              <p className="text-muted-foreground">Designing and managing cloud-native infrastructure solutions.</p>
-            </div>
-
-            <div className="neo-blur p-6 rounded-lg flex flex-col items-center text-center transform transition-transform duration-300 hover:scale-105">
-              <Cloud className="w-12 h-12 text-accent2 mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Cloud Computing</h3>
-              <p className="text-muted-foreground">AWS services and cloud management expertise.</p>
-            </div>
-
-            <div className="neo-blur p-6 rounded-lg flex flex-col items-center text-center transform transition-transform duration-300 hover:scale-105">
-              <GitBranch className="w-12 h-12 text-accent1 mb-4" />
-              <h3 className="text-xl font-semibold mb-2">CI/CD</h3>
-              <p className="text-muted-foreground">Implementing automated pipelines for efficient deployments.</p>
-            </div>
-
-            <div className="neo-blur p-6 rounded-lg flex flex-col items-center text-center transform transition-transform duration-300 hover:scale-105">
-              <Globe className="w-12 h-12 text-accent2 mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Containerization</h3>
-              <p className="text-muted-foreground">Docker and Kubernetes for scalable applications.</p>
-            </div>
+            {[
+              { 
+                icon: <Server />, 
+                title: 'Infrastructure', 
+                description: 'Designing and managing cloud-native infrastructure solutions.',
+                color: 'accent1'
+              },
+              { 
+                icon: <Cloud />, 
+                title: 'Cloud Computing', 
+                description: 'AWS services and cloud management expertise.',
+                color: 'accent2'
+              },
+              { 
+                icon: <GitBranch />, 
+                title: 'CI/CD', 
+                description: 'Implementing automated pipelines for efficient deployments.',
+                color: 'accent1'
+              },
+              { 
+                icon: <Globe />, 
+                title: 'Containerization', 
+                description: 'Docker and Kubernetes for scalable applications.',
+                color: 'accent2'
+              }
+            ].map((item) => (
+              <div 
+                key={item.title} 
+                className="neo-blur p-6 rounded-lg flex flex-col items-center text-center transform transition-all duration-300 hover:translate-y-[-10px] hover:scale-[1.05] hover:border-accent1/50 group"
+              >
+                <div className={`w-16 h-16 rounded-full mb-4 flex items-center justify-center bg-gradient-to-br from-${item.color} to-${item.color}/50 group-hover:rotate-12 transition-transform`}>
+                  {React.cloneElement(item.icon, { 
+                    className: `w-8 h-8 text-white group-hover:scale-110 transition-transform` 
+                  })}
+                </div>
+                <h3 className="text-xl font-semibold mb-2 group-hover:text-accent1 transition-colors">{item.title}</h3>
+                <p className="text-muted-foreground group-hover:text-white transition-colors">{item.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

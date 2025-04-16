@@ -46,26 +46,26 @@ const ProjectsSection = () => {
           {projects.map((project, index) => (
             <div 
               key={project.title}
-              className="neo-blur rounded-lg overflow-hidden group transform transition duration-300 hover:translate-y-[-10px]"
+              className="neo-blur rounded-lg overflow-hidden group transform transition duration-300 hover:translate-y-[-15px] hover:shadow-2xl hover:scale-[1.02]"
             >
               <div className="h-48 bg-muted relative overflow-hidden">
                 <img 
                   src={project.image} 
                   alt={project.title} 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 group-hover:brightness-75"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
               </div>
               
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                <p className="text-muted-foreground mb-4">{project.description}</p>
+                <h3 className="text-xl font-bold mb-2 group-hover:text-accent1 transition-colors">{project.title}</h3>
+                <p className="text-muted-foreground mb-4 group-hover:text-white transition-colors">{project.description}</p>
                 
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.technologies.map((tech) => (
                     <span 
                       key={tech} 
-                      className="px-3 py-1 text-xs rounded-full bg-muted text-foreground"
+                      className="px-3 py-1 text-xs rounded-full bg-muted text-foreground transition-colors group-hover:bg-accent1/20 group-hover:text-accent1"
                     >
                       {tech}
                     </span>
@@ -76,11 +76,11 @@ const ProjectsSection = () => {
                   <Button 
                     variant="outline" 
                     size="sm"
-                    className="border-accent1 text-accent1 hover:bg-accent1/10"
+                    className="border-accent1 text-accent1 hover:bg-accent1/10 group-hover:bg-accent1/20 group-hover:border-accent1/50"
                     asChild
                   >
                     <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                      <Github className="mr-2 h-4 w-4" /> Code
+                      <Github className="mr-2 h-4 w-4 group-hover:animate-pulse" /> Code
                     </a>
                   </Button>
                   
@@ -88,11 +88,11 @@ const ProjectsSection = () => {
                     <Button 
                       variant="outline" 
                       size="sm"
-                      className="border-accent2 text-accent2 hover:bg-accent2/10"
+                      className="border-accent2 text-accent2 hover:bg-accent2/10 group-hover:bg-accent2/20 group-hover:border-accent2/50"
                       asChild
                     >
                       <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="mr-2 h-4 w-4" /> Live Demo
+                        <ExternalLink className="mr-2 h-4 w-4 group-hover:animate-pulse" /> Live Demo
                       </a>
                     </Button>
                   )}

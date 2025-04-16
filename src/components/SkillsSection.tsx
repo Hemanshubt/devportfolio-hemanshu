@@ -52,25 +52,25 @@ const SkillsSection = () => {
           {skillCategories.map((category, index) => (
             <div 
               key={category.name} 
-              className="neo-blur rounded-lg p-6 transform transition duration-300 hover:translate-y-[-5px]"
+              className="neo-blur rounded-lg p-6 transform transition duration-300 hover:translate-y-[-10px] hover:scale-[1.03] hover:border-accent1/50"
             >
               <div className="flex items-center mb-4">
-                <div className="p-3 rounded-full mr-3 bg-gradient-to-br from-accent1 to-accent2">
+                <div className="p-3 rounded-full mr-3 bg-gradient-to-br from-accent1 to-accent2 transition-transform group-hover:rotate-12">
                   {category.icon}
                 </div>
-                <h3 className="text-xl font-semibold">{category.name}</h3>
+                <h3 className="text-xl font-semibold group-hover:text-accent1 transition-colors">{category.name}</h3>
               </div>
               
               <div className="space-y-4">
                 {category.skills.map((skill) => (
-                  <div key={skill} className="flex items-center">
+                  <div key={skill} className="flex items-center group">
                     <div className="w-full bg-muted rounded-full h-2">
                       <div 
-                        className="bg-gradient-to-r from-accent1 to-accent2 h-2 rounded-full" 
+                        className="bg-gradient-to-r from-accent1 to-accent2 h-2 rounded-full group-hover:w-full transition-all duration-500" 
                         style={{ width: `${70 + Math.random() * 30}%` }}
                       ></div>
                     </div>
-                    <span className="ml-3 min-w-[80px] text-sm">{skill}</span>
+                    <span className="ml-3 min-w-[80px] text-sm group-hover:text-accent1 transition-colors">{skill}</span>
                   </div>
                 ))}
               </div>

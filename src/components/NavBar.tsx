@@ -36,7 +36,10 @@ const NavBar = () => {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'neo-blur' : 'bg-transparent'}`}>
       <div className="container mx-auto flex justify-between items-center py-4 px-6">
-        <a href="#" className="text-2xl font-bold text-gradient">
+        <a 
+          href="#" 
+          className="text-2xl font-bold text-gradient transition-transform hover:scale-105 hover:text-accent1"
+        >
           HEMANSHU
         </a>
         
@@ -45,7 +48,7 @@ const NavBar = () => {
             <a 
               key={link.name} 
               href={link.href} 
-              className="text-white hover:text-accent1 transition-colors duration-300"
+              className="text-white hover:text-accent1 transition-all duration-300 hover:tracking-wider hover:scale-105"
             >
               {link.name}
             </a>
@@ -53,7 +56,10 @@ const NavBar = () => {
         </div>
         
         <div className="md:hidden">
-          <button onClick={toggleMenu} className="text-white p-2">
+          <button 
+            onClick={toggleMenu} 
+            className="text-white p-2 hover:text-accent1 transition-colors"
+          >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
@@ -68,7 +74,7 @@ const NavBar = () => {
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="text-white hover:text-accent1 transition-colors duration-300"
+                className="text-white hover:text-accent1 transition-colors duration-300 hover:translate-x-2"
               >
                 {link.name}
               </a>

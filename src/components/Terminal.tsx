@@ -27,7 +27,7 @@ const Terminal = () => {
             <br />    <span className="code-tag">return</span> <span className="code-operator">(</span>
             <br />      <span className="code-name">this</span><span className="code-operator">.</span><span className="code-attr">hardWorker</span> <span className="code-operator">&&</span>
             <br />      <span className="code-name">this</span><span className="code-operator">.</span><span className="code-attr">problemSolver</span> <span className="code-operator">&&</span>
-            <br />      <span className="code-name">this</span><span className="code-operator">.</span><span className="code-attr">skills</span><span className="code-operator">.</span>length <span className="code-operator">>= 5</span>
+            <br />      <span className="code-name">this</span><span className="code-operator">.</span><span className="code-attr">skills</span><span className="code-operator">.</span>length <span className="code-operator">&gt;= 5</span>
             <br />    <span className="code-operator">);</span>
             <br />  {"}"},
             <br />{"}"};

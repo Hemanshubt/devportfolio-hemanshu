@@ -23,63 +23,75 @@ interface SkillCategory {
 const SkillsSection = () => {
   const skillCategories: SkillCategory[] = [
     {
-      name: 'Languages',
+      name: 'Languages and Scripting',
       icon: <Code2 className="w-6 h-6" />,
       skills: [
-        { name: 'Python', level: 95 },
-        { name: 'Java', level: 85 },
-        { name: 'Shell Scripting', level: 80 },
-      ],
-    },
-    {
-      name: 'Cloud & IaC',
-      icon: <Server className="w-6 h-6" />,
-      skills: [
-        { name: 'AWS', level: 90 },
-        { name: 'Terraform', level: 85 },
-        { name: 'Ansible', level: 80 },
-      ],
-    },
-    {
-      name: 'Containers & CI/CD',
-      icon: <Terminal className="w-6 h-6" />,
-      skills: [
-        { name: 'Docker', level: 95 },
-        { name: 'Kubernetes', level: 85 },
-        { name: 'Helm', level: 80 },
-        { name: 'Jenkins', level: 90 },
-        { name: 'GitLab', level: 85 },
-      ],
-    },
-    {
-      name: 'Monitoring',
-      icon: <BarChart4 className="w-6 h-6" />,
-      skills: [
-        { name: 'Prometheus', level: 85 },
-        { name: 'Grafana', level: 90 },
-      ],
-    },
-    {
-      name: 'Databases',
-      icon: <Database className="w-6 h-6" />,
-      skills: [
-        { name: 'MySQL', level: 90 },
+        { name: 'Python', level: 85 },
+        // { name: 'Java', level: 85 },
+        { name: 'Shell Scripting', level: 70 },
       ],
     },
     {
       name: 'Operating Systems',
       icon: <Monitor className="w-6 h-6" />,
       skills: [
-        { name: 'Linux', level: 95 },
-        { name: 'Windows', level: 80 },
+        { name: 'Linux', level: 75 },
+        { name: 'Windows', level: 95 },
       ],
     },
     {
-      name: 'Version Control & SCM',
+      name: 'Version Control and Source Code Management',
       icon: <GitBranch className="w-6 h-6" />,
       skills: [
         { name: 'Git', level: 95 },
-        { name: 'GitHub', level: 90 },
+        { name: 'GitHub', level: 80 },
+      ],
+    },
+    {
+      name: 'Containerization and Orchestration',
+      icon: <Terminal className="w-6 h-6" />,
+      skills: [
+        { name: 'Docker', level: 80 },
+        { name: 'Kubernetes', level: 80 },
+        { name: 'Helm', level: 70 },
+      ],
+    },
+    {
+      name: 'CI/CD Tools',
+      icon: <Terminal className="w-6 h-6" />,
+      skills: [
+        { name: 'Jenkins', level: 80 },
+        { name: 'GitLab', level: 75 },
+      ],
+    },
+    {
+      name: 'Cloud',
+      icon: <Server className="w-6 h-6" />,
+      skills: [
+        { name: 'AWS', level: 85 },
+      ],
+    },
+    {
+      name: 'Infrastructure as Code (IaC)',
+      icon: <Server className="w-6 h-6" />,
+      skills: [
+        { name: 'Terraform', level: 80 },
+        { name: 'Ansible', level: 80 },
+      ],
+    },
+    {
+      name: 'Observability Tools',
+      icon: <BarChart4 className="w-6 h-6" />,
+      skills: [
+        { name: 'Prometheus', level: 80 },
+        { name: 'Grafana', level: 78 },
+      ],
+    },
+    {
+      name: 'Databases',
+      icon: <Database className="w-6 h-6" />,
+      skills: [
+        { name: 'MySQL', level: 85 },
       ],
     },
   ];
@@ -118,7 +130,7 @@ const SkillsSection = () => {
                     <div className="w-full bg-muted rounded-full h-2">
                       <div
                         className="bg-gradient-to-r from-accent1 to-accent2 h-2 rounded-full group-hover:w-full transition-all duration-500"
-                        style={{ width: `${skill.level}%` }} // Use skill level here
+                        style={{ width: `${skill.level}%` }}
                       ></div>
                     </div>
                     <span className="ml-3 min-w-[80px] text-sm group-hover:text-accent1 transition-colors">

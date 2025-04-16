@@ -114,7 +114,13 @@ const ContactSection = () => {
               </div>
               <div>
                 <h3 className="text-lg font-medium">Location</h3>
-                <p className="text-muted-foreground">Shirpur, Maharashtra, India</p>
+                {/* <p className="text-muted-foreground">Shirpur, Maharashtra, India</p> */}
+                <a href="https://maps.app.goo.gl/D1Y1JmoawSZKS1FN9" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   className="text-muted-foreground hover:text-accent1">
+                  Shirpur, Maharashtra, India
+                </a>
               </div>
             </div>
 

@@ -10,6 +10,10 @@ const HeroSection = () => {
     contactSection?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const openResume = () => {
+    window.open('https://drive.google.com/file/d/109cp_8EdQ2z5h4X2ZGymsm-lJ9qzuLw1/view?usp=drive_link', '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <section id="home" className="min-h-screen pt-20 pb-10 relative bg-grid-pattern">
       <div className="absolute inset-0 bg-gradient-to-b from-background/80 to-background"></div>
@@ -32,7 +36,11 @@ const HeroSection = () => {
               >
                 <Mail className="mr-2 h-4 w-4 group-hover:animate-bounce" /> Contact Me
               </Button>
-              <Button variant="outline" className="group border-accent2 text-accent2 hover:bg-accent2/10">
+              <Button 
+                onClick={openResume} 
+                variant="outline" 
+                className="group border-accent2 text-accent2 hover:bg-accent2/10"
+              >
                 <Download className="mr-2 h-4 w-4 group-hover:animate-bounce" /> Get Resume
               </Button>
             </div>

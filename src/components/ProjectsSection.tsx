@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Github, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -20,7 +19,7 @@ const ProjectsSection = () => {
       technologies: ['Docker', 'Kubernetes', 'Flask', 'MySQL', 'Jenkins'],
       githubUrl: 'https://github.com/Hemanshubt/two-tier-flaskapp.git',
       // demoUrl: 'https://demo-url.com',
-      image: '/placeholder.svg',
+      image: '/project1.png',
     },
     {
       title: 'Node.js To-Do CI/CD Pipeline',
@@ -49,11 +48,11 @@ const ProjectsSection = () => {
               key={project.title}
               className="neo-blur rounded-lg overflow-hidden group transform transition duration-300 hover:translate-y-[-15px] hover:shadow-2xl hover:scale-[1.02]"
             >
-              <div className="h-48 bg-muted relative overflow-hidden">
+              <div className="h-48 md:h-64 bg-muted relative overflow-hidden">
                 <img 
                   src={project.image} 
                   alt={project.title} 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 group-hover:brightness-75"
+                  className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-75"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
               </div>

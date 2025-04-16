@@ -39,17 +39,18 @@ const AboutSection = () => {
                 color: 'accent2'
               },
               { 
+                icon: <Globe />, 
+                title: 'Containerization', 
+                description: 'Docker and Kubernetes for scalable applications.',
+                color: 'accent2'
+              },
+              { 
                 icon: <GitBranch />, 
                 title: 'CI/CD', 
                 description: 'Implementing automated pipelines for efficient deployments.',
                 color: 'accent1'
               },
-              { 
-                icon: <Globe />, 
-                title: 'Containerization', 
-                description: 'Docker and Kubernetes for scalable applications.',
-                color: 'accent2'
-              }
+              
             ].map((item) => (
               <div 
                 key={item.title} 

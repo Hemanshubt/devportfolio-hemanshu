@@ -19,7 +19,7 @@ const ProjectsSection = () => {
       technologies: ['Docker', 'Kubernetes', 'Flask', 'MySQL', 'Jenkins'],
       githubUrl: 'https://github.com/Hemanshubt/two-tier-flaskapp.git',
       // demoUrl: 'https://demo-url.com',
-      image: '/project1.png',
+      image: '/project.svg',
     },
     {
       title: 'Node.js To-Do CI/CD Pipeline',

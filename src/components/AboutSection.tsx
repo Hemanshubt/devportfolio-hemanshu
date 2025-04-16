@@ -14,7 +14,7 @@ const AboutSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 animate-fade-in">
             <p className="text-lg">
-              I'm a passionate <span className="text-accent1">DevOps enthusiast</span> and <span className="text-accent2">entry-level cloud engineer</span> with a strong foundation in cloud infrastructure, containerization, CI/CD pipelines, and automation. 
+              I'm a passionate <span className="text-accent1">DevOps enthusiast</span> and <span className="text-accent2">Entry-Level Cloud Engineer</span> with a strong foundation in cloud infrastructure, containerization, CI/CD pipelines, and automation. 
             </p>
             <p className="text-lg">
               My goal is to bridge the gap between development and operations, ensuring streamlined workflows, reduced deployment times, and enhanced application reliability.

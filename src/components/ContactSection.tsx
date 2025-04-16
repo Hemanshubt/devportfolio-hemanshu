@@ -122,7 +122,7 @@ const ContactSection = () => {
               <h3 className="text-lg font-medium">Connect with me</h3>
               <div className="flex space-x-4">
                 <a 
-                  href="https://github.com/HemanshuMahajan" 
+                  href="https://github.com/hemanshubt" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="p-3 rounded-full bg-muted hover:bg-muted/80 text-foreground transition-colors hover:scale-110"
@@ -130,7 +130,7 @@ const ContactSection = () => {
                   <Github className="h-5 w-5" />
                 </a>
                 <a 
-                  href="https://linkedin.com/in/hemanshumahajan" 
+                  href="https://www.linkedin.com/in/hemanshu-mahajan/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="p-3 rounded-full bg-muted hover:bg-muted/80 text-foreground transition-colors hover:scale-110"
@@ -138,7 +138,7 @@ const ContactSection = () => {
                   <Linkedin className="h-5 w-5" />
                 </a>
                 <a 
-                  href="https://twitter.com/hemanshu_tech" 
+                  href="https://x.com/Emperor28BTC" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="p-3 rounded-full bg-muted hover:bg-muted/80 text-foreground transition-colors hover:scale-110"

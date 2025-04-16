@@ -18,15 +18,16 @@ const ProjectsSection = () => {
       title: 'Two-tier Flaskapp Deployment',
       description: 'A comprehensive CI/CD pipeline for deploying a two-tier Flask application using Docker containers and Kubernetes orchestration.',
       technologies: ['Docker', 'Kubernetes', 'Flask', 'MySQL', 'Jenkins'],
-      githubUrl: 'https://github.com/yourusername/flaskapp-deployment',
+      githubUrl: 'https://github.com/Hemanshubt/two-tier-flaskapp.git',
+      // demoUrl: 'https://demo-url.com',
       image: '/placeholder.svg',
     },
     {
       title: 'Node.js To-Do CI/CD Pipeline',
       description: 'Implemented an automated CI/CD pipeline for a Node.js To-Do application using Jenkins, Docker, and AWS infrastructure.',
       technologies: ['Node.js', 'Jenkins', 'Docker', 'AWS', 'Terraform'],
-      githubUrl: 'https://github.com/yourusername/nodejs-todo-cicd',
-      demoUrl: 'https://demo-url.com',
+      githubUrl: 'https://github.com/Hemanshubt/Node-todo-app-main.git',
+      // demoUrl: 'https://demo-url.com',
       image: '/placeholder.svg',
     }
   ];

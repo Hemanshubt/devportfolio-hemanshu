@@ -5,15 +5,6 @@ import { Button } from '@/components/ui/button';
 import Terminal from './Terminal';
 
 const HeroSection = () => {
-  const scrollToContact = () => {
-    const contactSection = document.getElementById('contact');
-    contactSection?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  const openResume = () => {
-    window.open('https://drive.google.com/file/d/109cp_8EdQ2z5h4X2ZGymsm-lJ9qzuLw1/view?usp=drive_link', '_blank', 'noopener,noreferrer');
-  };
-
   return (
     <section id="home" className="min-h-screen pt-20 pb-10 relative bg-grid-pattern">
       <div className="absolute inset-0 bg-gradient-to-b from-background/80 to-background"></div>
@@ -30,22 +21,10 @@ const HeroSection = () => {
             </p>
             
             <div className="flex flex-wrap gap-4 pt-4">
-<<<<<<< HEAD
               <Button className="group bg-accent1 hover:bg-accent1/80 text-black font-medium px-6 py-5">
                 <Mail className="mr-2 h-4 w-4 group-hover:animate-bounce"/> Contact Me
-=======
-              <Button 
-                onClick={scrollToContact} 
-                className="group bg-accent1 hover:bg-accent1/80 text-black font-medium px-6 py-5"
-              >
-                <Mail className="mr-2 h-4 w-4 group-hover:animate-bounce" /> Contact Me
->>>>>>> ecbf9eb8374522ce51036fdd584648e99fbbb289
               </Button>
-              <Button 
-                onClick={openResume} 
-                variant="outline" 
-                className="group border-accent2 text-accent2 hover:bg-accent2/10"
-              >
+              <Button variant="outline" className="group border-accent2 text-accent2 hover:bg-accent2/10">
                 <Download className="mr-2 h-4 w-4 group-hover:animate-bounce" /> Get Resume
               </Button>
             </div>

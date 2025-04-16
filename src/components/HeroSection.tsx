@@ -23,7 +23,7 @@ const HeroSection = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
               Hello,
               <br />This is <span className="text-gradient">HEMANSHU</span>, 
-              <br />I'm an <span className="text-gradient">DevOps</span> Enthusiast.
+              <br />I'm an <span className="text-gradient">DevOps</span> & <span className="text-gradient">Cloud</span> Enthusiast.
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground">
               Transforming ideas into scalable cloud-native solutions.

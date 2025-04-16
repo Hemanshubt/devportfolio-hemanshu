@@ -32,15 +32,15 @@ const Terminal = () => {
             <br />  {"}"},
             <br />{"}"};
             <br />
-            <br /><span className="code-comment">// Is Hemanshu hireable?</span>
-            <br /><span className="code-name">console</span><span className="code-operator">.</span><span className="code-function">log</span><span className="code-operator">(</span><span className="code-name">devOpsEngineer</span><span className="code-operator">.</span><span className="code-function">hireable</span><span className="code-operator">()</span><span className="code-operator">)</span><span className="code-operator">;</span> <span className="code-comment">// true</span>
+            {/* <br /><span className="code-comment">// Is Hemanshu hireable?</span>
+            <br /><span className="code-name">console</span><span className="code-operator">.</span><span className="code-function">log</span><span className="code-operator">(</span><span className="code-name">devOpsEngineer</span><span className="code-operator">.</span><span className="code-function">hireable</span><span className="code-operator">()</span><span className="code-operator">)</span><span className="code-operator">;</span> <span className="code-comment">// true</span> */}
         </pre>
-        <div className="flex items-center mt-2">
+        {/* <div className="flex items-center mt-2">
           <span className="text-green-400 mr-2">➜</span>
           <span className="text-accent1 mr-2">~/portfolio</span>
           <span className="text-white">$</span>
           <span className="ml-2 inline-block h-5 w-2 bg-white/80 animate-blink"></span>
-        </div>
+        </div> */}
       </div>
     </div>
   );

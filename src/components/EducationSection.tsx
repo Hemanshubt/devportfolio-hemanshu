@@ -5,7 +5,7 @@ const EducationSection = () => {
   const education = [
     {
       degree: 'Integrated MCA',
-      institution: 'R. C. Patel Institute of Management.',
+      institution: 'R. C. Patel Institute of Management Research and Development College Shirpur.',
       period: '2020 - 2025',
       details: 'CGPA 8.7',
     },

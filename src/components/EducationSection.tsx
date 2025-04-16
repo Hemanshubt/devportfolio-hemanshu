@@ -37,7 +37,7 @@ const EducationSection = () => {
       link: 'https://www.credly.com/badges/8ed7d7ad-9993-479c-a919-b8f173f9aef8/public_url',
     },
     {
-      title: 'Kubernetes for the Absolute Beginners - Hands-on Tutorial',
+      title: 'Kubernetes for the Absolute Beginners Hands-on Tutorial',
       issuer: 'Kodekloud',
       date: 'Apr 21, 2024',
       link: 'https://learn.kodekloud.com/user/certificate/2D1466DFC0C5-2D1460E91B48-2D145B4F88C5',

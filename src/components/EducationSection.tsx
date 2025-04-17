@@ -1,5 +1,7 @@
+
 import React from 'react';
-import { GraduationCap, Award } from 'lucide-react';
+import { GraduationCap, Award, ExternalLink } from 'lucide-react';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
 
 const EducationSection = () => {
   const education = [
@@ -70,13 +72,16 @@ const EducationSection = () => {
             </h3>
 
             {education.map((item, index) => (
-              <div key={index} className="neo-blur p-6 rounded-lg">
+              <div 
+                key={index} 
+                className="neo-blur p-6 rounded-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:border-accent1/30 group"
+              >
                 <div className="flex justify-between flex-wrap gap-2">
-                  <h4 className="text-xl font-medium">{item.degree}</h4>
-                  <span className="text-accent2">{item.period}</span>
+                  <h4 className="text-xl font-medium group-hover:text-accent1 transition-colors duration-300">{item.degree}</h4>
+                  <span className="text-accent2 group-hover:scale-105 transition-transform duration-300">{item.period}</span>
                 </div>
-                <p className="text-muted-foreground">{item.institution}</p>
-                <p className="mt-2">{item.details}</p>
+                <p className="text-muted-foreground group-hover:text-foreground transition-colors duration-300">{item.institution}</p>
+                <p className="mt-2 group-hover:font-medium transition-all duration-300">{item.details}</p>
               </div>
             ))}
           </div>
@@ -88,21 +93,26 @@ const EducationSection = () => {
 
             <div className="space-y-4">
               {certifications.map((cert, index) => (
-                <div key={index} className="neo-blur p-4 rounded-lg flex justify-between items-center">
+                <div 
+                  key={index} 
+                  className="neo-blur p-4 rounded-lg flex justify-between items-center transition-all duration-300 
+                          hover:scale-[1.02] hover:shadow-lg hover:border-accent1/30 group"
+                >
                   <div>
                     <h4 className="font-medium">
                       <a
                         href={cert.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-accent1 hover:underline"
+                        className="text-accent1 hover:underline group-hover:text-accent1/90 transition-colors duration-300 flex items-center gap-1"
                       >
                         {cert.title}
+                        <ExternalLink className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                       </a>
                     </h4>
-                    <p className="text-sm text-muted-foreground">{cert.issuer}</p>
+                    <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">{cert.issuer}</p>
                   </div>
-                  <span className="text-sm text-accent2">{cert.date}</span>
+                  <span className="text-sm text-accent2 group-hover:scale-105 transition-transform duration-300">{cert.date}</span>
                 </div>
               ))}
             </div>
@@ -110,21 +120,26 @@ const EducationSection = () => {
             <div className="mt-8">
               <h3 className="text-xl font-semibold mb-4">Achievements</h3>
               {achievements.map((achievement, index) => (
-                <div key={index} className="neo-blur p-4 rounded-lg mb-4 flex justify-between items-start flex-wrap gap-2">
+                <div 
+                  key={index} 
+                  className="neo-blur p-4 rounded-lg mb-4 flex justify-between items-start flex-wrap gap-2 
+                          transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:border-accent2/30 group"
+                >
                   <div>
                     <h4 className="font-medium">
                       <a
                         href={achievement.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-accent1 hover:underline"
+                        className="text-accent1 hover:underline group-hover:text-accent1/90 transition-colors duration-300 flex items-center gap-1"
                       >
                         {achievement.title}
+                        <ExternalLink className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                       </a>
                     </h4>
-                    <p className="text-sm text-muted-foreground">{achievement.details}</p>
+                    <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">{achievement.details}</p>
                   </div>
-                  <span className="text-sm text-accent2">{achievement.date}</span>
+                  <span className="text-sm text-accent2 group-hover:scale-105 transition-transform duration-300">{achievement.date}</span>
                 </div>
               ))}
             </div>

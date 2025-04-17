@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
@@ -24,26 +23,16 @@ const NavBar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // const navLinks = [
-  //   { name: 'About', href: '#about' },
-  //   { name: 'Skills', href: '#skills' },
-  //   { name: 'Projects', href: '#projects' },
-  //   { name: 'Education', href: '#education' },
-  //   // { name: 'Certifications', href: '#certifications' },
-  //   { name: 'Contact', href: '#contact' },
-  // ];
-
   const navLinks = [
-    { name: 'Home', href: '#home' }, // Added Home link
+    { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
     { name: 'Skills', href: '#skills' },
+    { name: 'Experience', href: '#experience' },
     { name: 'Projects', href: '#projects' },
     { name: 'Education', href: '#education' },
-    // { name: 'Certifications', href: '#certifications' },
     { name: 'Contact', href: '#contact' },
   ];
   
-
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'neo-blur' : 'bg-transparent'}`}>
       <div className="container mx-auto flex justify-between items-center py-4 px-6">

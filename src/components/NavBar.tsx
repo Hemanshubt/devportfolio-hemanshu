@@ -1,5 +1,7 @@
+
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import ThemeToggle from './ThemeToggle';
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,7 +29,7 @@ const NavBar = () => {
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
     { name: 'Skills', href: '#skills' },
-    // { name: 'Experience', href: '#experience' },
+    { name: 'Experience', href: '#experience' },
     { name: 'Projects', href: '#projects' },
     { name: 'Education', href: '#education' },
     { name: 'Contact', href: '#contact' },
@@ -43,7 +45,7 @@ const NavBar = () => {
           HEMANSHU
         </a>
         
-        <div className="hidden md:flex space-x-8">
+        <div className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
             <a 
               key={link.name} 
@@ -53,9 +55,11 @@ const NavBar = () => {
               {link.name}
             </a>
           ))}
+          <ThemeToggle />
         </div>
         
-        <div className="md:hidden">
+        <div className="md:hidden flex items-center gap-4">
+          <ThemeToggle />
           <button 
             onClick={toggleMenu} 
             className="text-white p-2 hover:text-accent1 transition-colors"

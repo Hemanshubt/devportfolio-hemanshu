@@ -14,13 +14,13 @@ import { Toaster } from '@/components/ui/toaster';
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-background text-foreground">
+    <div className="min-h-screen flex flex-col bg-background text-foreground transition-colors duration-300">
       <NavBar />
       <main className="flex-grow">
         <HeroSection />
         <AboutSection />
         <SkillsSection />
-        {/* <ExperienceSection /> */}
+        <ExperienceSection />
         <ProjectsSection />
         <EducationSection />
         <ContactSection />

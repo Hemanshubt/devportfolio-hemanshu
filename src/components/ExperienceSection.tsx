@@ -1,7 +1,8 @@
 
 import React from 'react';
-import { Briefcase, Calendar, Building } from 'lucide-react';
+import { Briefcase, Calendar, Building, ExternalLink } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
+import { HoverCard, HoverCardContent, HoverCardTrigger } from './ui/hover-card';
 
 const ExperienceSection = () => {
   const experiences = [
@@ -35,42 +36,53 @@ const ExperienceSection = () => {
 
         <div className="space-y-8">
           {experiences.map((exp, index) => (
-            <Card key={index} className="neo-blur border-none hover:shadow-lg transition-all duration-300">
+            <Card 
+              key={index} 
+              className="neo-blur border-none hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group"
+            >
               <CardHeader className="pb-2">
                 <div className="flex justify-between items-start flex-wrap gap-2">
                   <div>
-                    <CardTitle className="flex items-center gap-2">
-                      <Briefcase className="text-accent1" size={20} />
+                    <CardTitle className="flex items-center gap-2 group-hover:text-accent1 transition-colors">
+                      <Briefcase className="text-accent1 group-hover:rotate-12 transition-transform" size={20} />
                       {exp.title}
                     </CardTitle>
                     <CardDescription className="flex items-center gap-2 mt-1">
-                      <Building className="text-accent2" size={16} />
+                      <Building className="text-accent2 group-hover:scale-110 transition-transform" size={16} />
                       <a 
                         href={exp.link} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="hover:text-accent1 transition-colors"
+                        className="hover:text-accent1 transition-colors flex items-center gap-1 group-hover:underline"
                       >
                         {exp.company}
+                        <ExternalLink size={12} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                       </a>
                     </CardDescription>
                   </div>
-                  <span className="text-accent2 flex items-center gap-1 text-sm">
-                    <Calendar size={16} />
+                  <span className="text-accent2 flex items-center gap-1 text-sm group-hover:font-medium transition-all">
+                    <Calendar size={16} className="group-hover:animate-pulse" />
                     {exp.period}
                   </span>
                 </div>
               </CardHeader>
               <CardContent>
-                <p className="mb-3 text-muted-foreground">{exp.description}</p>
+                <p className="mb-3 text-muted-foreground group-hover:text-foreground transition-colors">{exp.description}</p>
                 <div className="flex flex-wrap gap-2 mt-3">
                   {exp.skills.map((skill, i) => (
-                    <span 
-                      key={i} 
-                      className="text-xs px-2 py-1 rounded bg-accent/30 text-accent1"
-                    >
-                      {skill}
-                    </span>
+                    <HoverCard key={i}>
+                      <HoverCardTrigger>
+                        <span 
+                          className="text-xs px-2 py-1 rounded bg-accent/30 text-accent1 hover:bg-accent1 hover:text-black transition-colors cursor-pointer"
+                        >
+                          {skill}
+                        </span>
+                      </HoverCardTrigger>
+                      <HoverCardContent className="neo-blur border-none w-48 text-center">
+                        <p className="text-sm font-medium">{skill}</p>
+                        <p className="text-xs text-muted-foreground">Used in {exp.company}</p>
+                      </HoverCardContent>
+                    </HoverCard>
                   ))}
                 </div>
               </CardContent>

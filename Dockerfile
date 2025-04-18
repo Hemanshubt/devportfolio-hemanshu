@@ -23,5 +23,6 @@ RUN npm install -g serve
 # Expose port 8000
 EXPOSE 8000
 
+
 # Start the application
 CMD ["serve", "-s", "dist", "-l", "8000"]

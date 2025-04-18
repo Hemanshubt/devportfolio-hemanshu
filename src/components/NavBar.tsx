@@ -1,13 +1,13 @@
-// src/components/NavBar.jsx
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import { Link } from 'react-router-dom';  // Import Link for navigation
+import { Link, useLocation } from 'react-router-dom';
 import ThemeToggle from './ThemeToggle';
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('');
+  const location = useLocation();
 
   // Toggle mobile menu
   const toggleMenu = () => {
@@ -18,16 +18,11 @@ const NavBar = () => {
   const handleScrollToSection = (e, targetId) => {
     e.preventDefault();
     
-    // Update URL to match the section
-    window.history.pushState(null, '', `#${targetId}`);
-
-    // Get the target element and scroll to it
     const targetElement = document.getElementById(targetId);
     if (targetElement) {
-      window.scrollTo({
-        top: targetElement.offsetTop,
-        behavior: 'smooth',
-      });
+      targetElement.scrollIntoView({ behavior: 'smooth' });
+      window.history.replaceState(null, '', `/#${targetId}`);
+      setActiveSection(targetId);
     }
   };
 
@@ -35,54 +30,56 @@ const NavBar = () => {
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
+
+      // Update active section based on scroll position
+      const sections = document.querySelectorAll('section[id]');
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+          setActiveSection(section.id);
+          window.history.replaceState(null, '', `/#${section.id}`);
+        }
+      });
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Set active section based on scroll position
+  // Handle initial section detection on page load
   useEffect(() => {
-    const sections = document.querySelectorAll('section[id]');
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      { threshold: 0.6 }
-    );
-
-    sections.forEach((section) => observer.observe(section));
-
-    return () => {
-      sections.forEach((section) => observer.unobserve(section));
-    };
-  }, []);
+    const hash = window.location.hash.replace('#', '');
+    if (hash) {
+      const element = document.getElementById(hash);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+          setActiveSection(hash);
+        }, 100);
+      }
+    }
+  }, [location]);
 
   // Navigation links
   const navLinks = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
     { name: 'Skills', href: '#skills' },
-    // { name: 'Experience', href: '#experience' },
     { name: 'Projects', href: '#projects' },
     { name: 'Education', href: '#education' },
     { name: 'Contact', href: '#contact' },
-    
   ];
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'neo-blur' : 'bg-transparent'}`}>
       <div className="container mx-auto flex justify-between items-center py-4 px-6">
-        <a
-          href="#"
+        <Link
+          to="/"
           className="text-2xl font-bold text-gradient transition-transform hover:scale-105 hover:text-accent1"
+          onClick={(e) => handleScrollToSection(e, 'home')}
         >
           HEMANSHU
-        </a>
+        </Link>
 
         <div className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
@@ -113,7 +110,6 @@ const NavBar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden neo-blur animate-fade-in">
           <div className="flex flex-col space-y-4 py-4 px-6">

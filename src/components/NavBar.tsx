@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import ThemeToggle from './ThemeToggle';
 
 const NavBar = () => {
@@ -54,30 +54,19 @@ const NavBar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [activeSection]);
 
-  // Handle section navigation from URL on initial load and route changes
+  // Handle initial section detection on page load
   useEffect(() => {
-    // Check if we have a section in the URL hash
     const hash = window.location.hash.replace('#', '');
-
-    // Check if we have a section in the path parameter
-    const pathSection = location.pathname.substring(1);
-    
-    // Determine which section to navigate to (prefer hash over path)
-    const targetSection = hash || (pathSection && pathSection !== 'home' ? pathSection : 'home');
-    
-    if (targetSection) {
-      const element = document.getElementById(targetSection);
+    if (hash) {
+      const element = document.getElementById(hash);
       if (element) {
         setTimeout(() => {
           element.scrollIntoView({ behavior: 'smooth' });
-          setActiveSection(targetSection);
+          setActiveSection(hash);
         }, 100);
-      } else if (targetSection !== 'home' && pathSection) {
-        // If section doesn't exist as ID but was in the path, redirect to home
-        navigate('/', { replace: true });
       }
     }
-  }, [location, navigate]);
+  }, [location.hash]);
 
   // Navigation links
   const navLinks = [

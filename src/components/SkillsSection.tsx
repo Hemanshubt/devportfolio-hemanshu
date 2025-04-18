@@ -1,17 +1,20 @@
 import React from 'react';
 import {
-  Terminal,
-  Server,
-  Database,
-  BarChart4,
   Code2,
   Monitor,
   GitBranch,
+  Container,
+  Workflow,
+  Cloud,
+  Settings,
+  BarChart4,
+  Database,
+  Terminal,
 } from 'lucide-react';
 
 interface Skill {
   name: string;
-  level: number; // 0 to 100
+  level: number;
 }
 
 interface SkillCategory {
@@ -27,7 +30,6 @@ const SkillsSection = () => {
       icon: <Code2 className="w-6 h-6" />,
       skills: [
         { name: 'Python', level: 85 },
-        // { name: 'Java', level: 85 },
         { name: 'Shell Scripting', level: 70 },
       ],
     },
@@ -49,7 +51,7 @@ const SkillsSection = () => {
     },
     {
       name: 'Containerization and Orchestration',
-      icon: <Terminal className="w-6 h-6" />,
+      icon: <Container className="w-6 h-6" />,
       skills: [
         { name: 'Docker', level: 80 },
         { name: 'Kubernetes', level: 80 },
@@ -58,7 +60,7 @@ const SkillsSection = () => {
     },
     {
       name: 'CI/CD Tools',
-      icon: <Terminal className="w-6 h-6" />,
+      icon: <Workflow className="w-6 h-6" />,
       skills: [
         { name: 'Jenkins', level: 80 },
         { name: 'GitLab', level: 75 },
@@ -66,14 +68,14 @@ const SkillsSection = () => {
     },
     {
       name: 'Cloud',
-      icon: <Server className="w-6 h-6" />,
+      icon: <Cloud className="w-6 h-6" />,
       skills: [
         { name: 'AWS', level: 85 },
       ],
     },
     {
       name: 'Infrastructure as Code (IaC)',
-      icon: <Server className="w-6 h-6" />,
+      icon: <Settings className="w-6 h-6" />,
       skills: [
         { name: 'Terraform', level: 80 },
         { name: 'Ansible', level: 80 },
